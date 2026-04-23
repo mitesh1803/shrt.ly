@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shrt.ly</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Chrome Extension</p>
+        <h1>shrt<span>.ly</span></h1>
+        <p class="subtitle">Shorten the active tab or any pasted link in a few seconds.</p>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Shorten URL</h2>
+          <button id="useCurrentTabButton" class="button button-secondary" type="button">Use current tab</button>
+        </div>
+
+        <label class="label" for="urlInput">Link</label>
+        <textarea id="urlInput" class="field field-textarea" rows="3" placeholder="https://example.com/article"></textarea>
+
+        <button id="shortenButton" class="button button-primary" type="button">Shorten URL</button>
+        <p id="statusMessage" class="status" aria-live="polite"></p>
+
+        <div id="resultPanel" class="result" hidden>
+          <label class="label" for="resultInput">Short link</label>
+          <input id="resultInput" class="field" type="text" readonly />
+          <div class="result-actions">
+            <button id="copyButton" class="button button-primary" type="button">Copy</button>
+            <button id="openButton" class="button button-secondary" type="button">Open</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Account</h2>
+          <button id="logoutButton" class="button button-secondary" type="button" hidden>Log out</button>
+        </div>
+
+        <div id="sessionPanel" class="session" hidden>
+          <p class="session-label">Signed in as</p>
+          <p id="sessionEmail" class="session-email"></p>
+          <p class="session-copy">New links will be attached to your account automatically.</p>
+        </div>
+
+        <form id="loginForm" class="stack">
+          <p class="helper">Login is optional. Guest shortening still works.</p>
+          <label class="label" for="emailInput">Email</label>
+          <input id="emailInput" class="field" type="email" autocomplete="email" placeholder="you@example.com" />
+          <label class="label" for="passwordInput">Password</label>
+          <input id="passwordInput" class="field" type="password" autocomplete="current-password" placeholder="Password" />
+          <button id="loginButton" class="button button-primary" type="submit">Login</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <button id="openOptionsButton" class="link-button" type="button">API settings</button>
+        <p id="apiBaseLabel" class="api-label"></p>
+      </footer>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

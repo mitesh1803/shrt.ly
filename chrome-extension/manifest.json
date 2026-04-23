@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "shrt.ly URL Shortener",
+  "version": "1.0.0",
+  "description": "Shorten the current tab or any URL with your shrt.ly backend.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_title": "shrt.ly URL Shortener",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}

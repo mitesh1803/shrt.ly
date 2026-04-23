@@ -1,0 +1,115 @@
+:root {
+  color-scheme: dark;
+  --bg: #071019;
+  --panel: rgba(11, 25, 38, 0.92);
+  --panel-border: rgba(120, 160, 191, 0.16);
+  --text: #f7fbfe;
+  --muted: #99b3c6;
+  --accent: #34d399;
+  --accent-strong: #10b981;
+  --field: rgba(6, 16, 26, 0.96);
+  --field-border: rgba(115, 144, 170, 0.25);
+  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(52, 211, 153, 0.18), transparent 30%),
+    linear-gradient(180deg, #061019 0%, #0b1825 100%);
+  color: var(--text);
+}
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(100%, 560px);
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 18px 42px rgba(2, 8, 14, 0.44);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: -0.04em;
+}
+
+.copy {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.form {
+  margin-top: 24px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.field {
+  width: 100%;
+  border: 1px solid var(--field-border);
+  background: var(--field);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+}
+
+.field:focus {
+  outline: 2px solid rgba(52, 211, 153, 0.35);
+  outline-offset: 1px;
+}
+
+.button {
+  margin-top: 14px;
+  border: 0;
+  border-radius: 14px;
+  padding: 13px 18px;
+  font: inherit;
+  font-weight: 700;
+  color: #032014;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+}
+
+.status {
+  min-height: 20px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.status.is-success {
+  color: var(--accent);
+}
+
+.status.is-error {
+  color: #fda4af;
+}
