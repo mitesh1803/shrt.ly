@@ -4,9 +4,9 @@ services:
     container_name: postgres_db
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: urlshortener
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5432:5432"
     volumes:
@@ -28,10 +28,8 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-    environment:
-      DATABASE_URL: "postgresql://postgres:postgres@db:5432/urlshortener"
-      JWT_SECRET: "abcd"
-      PORT: 3000
+    env_file:
+      -.env
 
 volumes:
   postgres_data:
