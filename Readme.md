@@ -137,7 +137,32 @@ Frontend runs on `http://localhost:5173`
 2. Follow steps 3–7 above using the `chrome-extension/` folder
 
 ---
+## Docker Setup
 
+### Prerequisites
+- Docker
+- Docker Compose
+
+### Run with Docker
+
+```bash
+docker compose up
+```
+
+This starts both the backend and PostgreSQL database automatically.
+
+### Pull from Docker Hub
+
+```bash
+docker pull mitesh1803/url-shortener:latest
+```
+
+### Environment Variables in Docker
+All environment variables are configured in `docker-compose.yml`:
+- `DATABASE_URL` — PostgreSQL connection string
+- `JWT_SECRET` — JWT signing secret
+- `PORT` — Server port (default: 3000)
+---
 ## API Endpoints
 
 ### Auth
