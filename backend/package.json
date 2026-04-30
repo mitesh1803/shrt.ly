@@ -4,7 +4,7 @@
   "description": "server/ ├── src/ │   ├── index.ts          ← app entry, starts server │   ├── routes/ │   │   └── url.routes.ts ← defines API endpoints │   ├── controllers/ │   │   └── url.controller.ts ← handles request/response logic │   ├── services/ │   │   └── url.service.ts    ← core business logic │   ├── models/ │   │   └── url.model.ts      ← database schema │   ├── middlewares/ │   │   └── validate.ts       ← input validation, auth guards │   └── utils/ │       └── generateCode.ts   ← helper functions ├── .env ├── tsconfig.json └── package.json",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -b",
     "start": "node dist/server.js",
     "dev": "nodemon --exec tsx src/server.ts --ext ts"
   },
@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@mitesh_1803/commit-gen": "^1.0.7",
     "@prisma/adapter-pg": "^7.7.0",
     "@prisma/client": "^7.7.0",
     "bcrypt-ts": "^8.0.1",
